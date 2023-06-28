@@ -23,5 +23,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         TagCloudFactory::new()->count(10)->create();
+
+        $this->call([
+            CategorySeeder::class,
+        ]);
     }
 }

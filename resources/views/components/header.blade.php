@@ -22,14 +22,36 @@
             <div class="mobile_menu d-lg-none d-block"></div>
             <div class="main-nav d-none d-lg-block float-start">
                 <nav>
-                    <!--Desktop menu-->
                     <ul class="main-menu d-none d-lg-inline font-small">
                         <li>
                             <a href="{{ route('home.index') }}"> <i class="elegant-icon icon_house_alt mr-5"></i>
                                 Home</a>
                         </li>
-
-                        <li> <a href="{{ route('home.contact') }}">Contact</a> </li>
+                        @foreach ($categories as $category)
+                            @if ($category->children->count() > 0)
+                                @foreach ($category->children as $child)
+                                    @if ($child->children->count() > 0)
+                                        <li class="menu-item-has-children">
+                                            <a href="{{ route('home.search', $child->slug) }}">{{ $child->title }}</a>
+                                            <ul class="sub-menu text-muted font-small">
+                                                @foreach ($child->children as $childCategory)
+                                                    <li><a
+                                                            href="{{ route('home.search', $childCategory->slug) }}">{{ $childCategory->title }}</a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </li>
+                                    @else
+                                        <li><a href="{{ route('home.search', $child->slug) }}">{{ $child->title }}</a>
+                                        </li>
+                                    @endif
+                                @endforeach
+                            @else
+                                <li><a href="{{ route('home.search', $category->slug) }}">
+                                        {{ $category->title }}</a></li>
+                            @endif
+                        @endforeach
+                        <li><a href="{{ route('home.contact') }}">Contact</a></li>
                     </ul>
                     <!--Mobile menu-->
                     <ul id="mobile-menu" class="d-block d-lg-none text-muted">

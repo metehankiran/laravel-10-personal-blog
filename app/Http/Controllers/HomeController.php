@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,10 @@ class HomeController extends Controller
      */
     public function __construct()
     {
+        $categories = Category::with('children')->where('parent_id', null)->get();
+        
         view()->share('tagCloud', \App\Models\TagCloud::all());
+        view()->share('categories', $categories);
     }
 
     /**
