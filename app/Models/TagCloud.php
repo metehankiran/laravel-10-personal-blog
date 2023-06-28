@@ -12,5 +12,6 @@ class TagCloud extends Model
     protected $fillable = [
         'name',
         'slug',
+        'is_featured',
     ];
 }

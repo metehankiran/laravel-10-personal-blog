@@ -30,16 +30,17 @@
                         <div class="col-md-4 align-self-center">
                             <h5 class="widget-title">Featured posts</h5>
                         </div>
+                        @if($tagCloud->where('is_featured',true)->count() > 0)
                         <div class="col-md-8 text-md-end font-small align-self-center">
                             <p class="d-inline-block mr-5 mb-0"><i
                                     class="elegant-icon  icon_tag_alt mr-5 text-muted"></i>Hot tags:</p>
                             <ul class="list-inline d-inline-block tags">
-                                <li class="list-inline-item"><a href="#"># Covid-19</a></li>
-                                <li class="list-inline-item"><a href="#"># Inspiration</a></li>
-                                <li class="list-inline-item"><a href="#"># Work online</a></li>
-                                <li class="list-inline-item"><a href="#"># Stay home</a></li>
+                                @foreach ($tagCloud->where('is_featured',true) as $tag)
+                                <li class="list-inline-item"><a href="{{ route('home.search',$tag->slug) }}"># {{ $tag->name }}</a></li>
+                                @endforeach
                             </ul>
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>

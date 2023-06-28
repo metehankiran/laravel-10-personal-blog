@@ -21,6 +21,7 @@ class TagCloudFactory extends Factory
         return [
             'name' => $word,
             'slug' => Str::slug($word),
+            'is_featured' => $this->faker->boolean(30),
         ];
     }
 }
