@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Contact;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -16,7 +17,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $categories = Category::with('children')->where('parent_id', null)->get();
-        
+
         view()->share('tagCloud', \App\Models\TagCloud::all());
         view()->share('categories', $categories);
     }
@@ -68,5 +69,34 @@ class HomeController extends Controller
     {
         return view('home.search')->with('query', $query);
     }
+
+    /**
+     * Show the post.
+     *
+     * @param  mixed $slug
+     * @return void
+     */
+    public function post($slug)
+    {
+        $post = Post::where('slug', $slug)->firstOrFail();
+        $post->increment('views');
+
+        return view('home.post')->with('post', $post);
+    }
+
+    /**
+     * Show the posts by category.
+     *
+     * @param  mixed $slug
+     * @return void
+     */
+    public function category($slug)
+    {
+        $category = Category::where('slug', $slug)->firstOrFail();
+        $posts = Post::where('category_id', $category->id)->paginate(6);
+
+        return view('home.category')->with('posts', $posts)->with('category', $category);
+    }
+
 
 }

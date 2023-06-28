@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\User;
+use Database\Factories\PostFactory;
 use Database\Factories\TagCloudFactory;
 use Illuminate\Database\Seeder;
 
@@ -22,10 +23,11 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password'),
         ]);
 
-        TagCloudFactory::new()->count(10)->create();
-
         $this->call([
             CategorySeeder::class,
         ]);
+
+        TagCloudFactory::new()->count(10)->create();
+        PostFactory::new()->count(200)->create();
     }
 }

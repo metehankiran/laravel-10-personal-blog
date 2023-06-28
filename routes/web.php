@@ -21,6 +21,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/contact', [HomeController::class, 'contact'])->name('home.contact');
 Route::post('/contact', [HomeController::class, 'contactStore'])->name('home.contact.store');
 Route::get('/search/{query}', [HomeController::class, 'search'])->name('home.search');
+Route::get('/post/{post:slug}', [HomeController::class, 'post'])->name('home.post');
+Route::get('/category/{slug}', [HomeController::class, 'category'])->name('home.category');
 
 // Authentication
 Route::middleware('guest')->group(function () {

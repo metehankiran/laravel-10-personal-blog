@@ -32,22 +32,22 @@
                                 @foreach ($category->children as $child)
                                     @if ($child->children->count() > 0)
                                         <li class="menu-item-has-children">
-                                            <a href="{{ route('home.search', $child->slug) }}">{{ $child->title }}</a>
+                                            <a href="{{ route('home.category', $child->slug) }}">{{ $child->title }}</a>
                                             <ul class="sub-menu text-muted font-small">
                                                 @foreach ($child->children as $childCategory)
                                                     <li><a
-                                                            href="{{ route('home.search', $childCategory->slug) }}">{{ $childCategory->title }}</a>
+                                                            href="{{ route('home.category', $childCategory->slug) }}">{{ $childCategory->title }}</a>
                                                     </li>
                                                 @endforeach
                                             </ul>
                                         </li>
                                     @else
-                                        <li><a href="{{ route('home.search', $child->slug) }}">{{ $child->title }}</a>
+                                        <li><a href="{{ route('home.category', $child->slug) }}">{{ $child->title }}</a>
                                         </li>
                                     @endif
                                 @endforeach
                             @else
-                                <li><a href="{{ route('home.search', $category->slug) }}">
+                                <li><a href="{{ route('home.category', $category->slug) }}">
                                         {{ $category->title }}</a></li>
                             @endif
                         @endforeach
