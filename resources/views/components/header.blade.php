@@ -3,10 +3,12 @@
         <div class="container">
             <div class="row pt-20 pb-20">
                 <div class="col-md-3 col-xs-6">
-                    <a href="{{ route('home.index') }}"><img class="logo" src="assets/imgs/theme/logo.png" alt=""></a>
+                    <a href="{{ route('home.index') }}"><img class="logo" src="{{ asset('assets') }}/imgs/theme/logo.png"
+                            alt=""></a>
                 </div>
                 <div class="col-md-9 col-xs-6 text-end header-top-right ">
-                    <button class="search-icon d-none d-md-inline"><span class="mr-15 text-muted font-small"><i class="elegant-icon icon_search mr-5"></i>Search</span></button>
+                    <button class="search-icon d-none d-md-inline"><span class="mr-15 text-muted font-small"><i
+                                class="elegant-icon icon_search mr-5"></i>Search</span></button>
                     <div class="dark-light-mode-cover">
                         <a class="dark-light-mode" href="#"></a>
                     </div>
@@ -22,72 +24,12 @@
                 <nav>
                     <!--Desktop menu-->
                     <ul class="main-menu d-none d-lg-inline font-small">
-                        <li class="menu-item-has-children">
-                            <a href="{{ route('home.index') }}"> <i class="elegant-icon icon_house_alt mr-5"></i> Home</a>
-                            <ul class="sub-menu text-muted font-small">
-                                <li><a href="{{ route('home.index') }}">Home default</a></li>
-                                <li><a href="home-2.html">Homepage 2</a></li>
-                                <li><a href="home-3.html">Homepage 3</a></li>
-                            </ul>
+                        <li>
+                            <a href="{{ route('home.index') }}"> <i class="elegant-icon icon_house_alt mr-5"></i>
+                                Home</a>
                         </li>
-                        <li> <a href="category-list.html">Travel</a> </li>
-                        <li class="current-item has-mega-menu">
-                            <a href="category-list.html">Mega Menu</a>
-                            <ul class="mega-menu">
-                                <li class="sub-mega-menu sub-mega-menu-width-22">
-                                    <a class="menu-title" href="#">Travel Blog</a>
-                                    <ul>
-                                        <li><a href="category-list.html">Destinations</a></li>
-                                        <li><a href="category-list.html">Tour Guides</a></li>
-                                        <li><a href="category-list.html">Travel Food</a></li>
-                                        <li><a href="category-list.html">Hotels Booking</a></li>
-                                        <li><a href="category-list.html">Transport Review</a></li>
-                                        <li><a href="category-list.html">Travel Healthy</a></li>
-                                    </ul>
-                                </li>
-                                <li class="sub-mega-menu sub-mega-menu-width-22">
-                                    <a class="menu-title" href="#">Fruit &amp; Vegetables</a>
-                                    <ul>
-                                        <li><a href="category-list.html">Meat &amp; Poultry</a></li>
-                                        <li><a href="category-list.html">Fresh Vegetables</a></li>
-                                        <li><a href="category-list.html">Herbs &amp; Seasonings</a></li>
-                                        <li><a href="category-list.html">Cuts &amp; Sprouts</a></li>
-                                        <li><a href="category-list.html">Exotic Fruits &amp; Veggies</a></li>
-                                        <li><a href="category-list.html">Packaged Produce</a></li>
-                                    </ul>
-                                </li>
-                                <li class="sub-mega-menu sub-mega-menu-width-22">
-                                    <a class="menu-title" href="#">Breakfast &amp; Dairy</a>
-                                    <ul>
-                                        <li><a href="category-list.html">Milk &amp; Flavoured Milk</a></li>
-                                        <li><a href="category-list.html">Butter and Margarine</a></li>
-                                        <li><a href="category-list.html">Eggs Substitutes</a></li>
-                                        <li><a href="category-list.html">Marmalades</a></li>
-                                        <li><a href="category-list.html">Sour Cream</a></li>
-                                        <li><a href="category-list.html">Cheese</a></li>
-                                    </ul>
-                                </li>
-                                <li class="sub-mega-menu sub-mega-menu-width-22">
-                                    <a class="menu-title" href="#">Meat &amp; Seafood</a>
-                                    <ul>
-                                        <li><a href="category-list.html">Breakfast Sausage</a></li>
-                                        <li><a href="category-list.html">Dinner Sausage</a></li>
-                                        <li><a href="category-list.html">Chicken</a></li>
-                                        <li><a href="category-list.html">Sliced Deli Meat</a></li>
-                                        <li><a href="category-list.html">Wild Caught Fillets</a></li>
-                                        <li><a href="category-list.html">Crab and Shellfish</a></li>
-                                    </ul>
-                                </li>
 
-                            </ul>
-                        </li>
-                        <li> <a href="category-grid.html">Guides</a> </li>
-                        <li> <a href="category-masonry.html">Food</a> </li>
-                        <li> <a href="category-big.html">Hotels</a> </li>
-                        <li> <a href="category.html">Review</a> </li>
-                        <li> <a href="category.html">Healthy </a> </li>
-                        <li> <a href="category.html">Lifestyle</a> </li>
-                        <li> <a href="category.html">Blog</a> </li>
+                        <li> <a href="{{ route('home.contact') }}">Contact</a> </li>
                     </ul>
                     <!--Mobile menu-->
                     <ul id="mobile-menu" class="d-block d-lg-none text-muted">
@@ -95,8 +37,6 @@
                             <a href="{{ route('home.index') }}">Home</a>
                             <ul class="sub-menu text-muted font-small">
                                 <li><a href="{{ route('home.index') }}">Home default</a></li>
-                                <li><a href="home-2.html">Homepage 2</a></li>
-                                <li><a href="home-3.html">Homepage 3</a></li>
                             </ul>
                         </li>
                         <li class="menu-item-has-children"><a href="#">Pages</a>
@@ -132,9 +72,12 @@
             </div>
             <div class="float-end header-tools text-muted font-small">
                 <ul class="header-social-network d-inline-block list-inline mr-15">
-                    <li class="list-inline-item"><a class="social-icon fb text-xs-center" target="_blank" href="#"><i class="elegant-icon social_facebook"></i></a></li>
-                    <li class="list-inline-item"><a class="social-icon tw text-xs-center" target="_blank" href="#"><i class="elegant-icon social_twitter "></i></a></li>
-                    <li class="list-inline-item"><a class="social-icon pt text-xs-center" target="_blank" href="#"><i class="elegant-icon social_pinterest "></i></a></li>
+                    <li class="list-inline-item"><a class="social-icon fb text-xs-center" target="_blank"
+                            href="#"><i class="elegant-icon social_facebook"></i></a></li>
+                    <li class="list-inline-item"><a class="social-icon tw text-xs-center" target="_blank"
+                            href="#"><i class="elegant-icon social_twitter "></i></a></li>
+                    <li class="list-inline-item"><a class="social-icon pt text-xs-center" target="_blank"
+                            href="#"><i class="elegant-icon social_pinterest "></i></a></li>
                 </ul>
                 <div class="off-canvas-toggle-cover d-inline-block">
                     <div class="off-canvas-toggle hidden d-inline-block" id="off-canvas-toggle">

@@ -27,7 +27,7 @@
                         <div class="d-flex hover-up-2 transition-normal">
                             <div class="post-thumb post-thumb-80 d-flex mr-15 border-radius-5 img-hover-scale overflow-hidden">
                                 <a class="color-white" href="single.html">
-                                    <img src="assets/imgs/news/thumb-1.jpg" alt="">
+                                    <img src="{{ asset('assets') }}/imgs/news/thumb-1.jpg" alt="">
                                 </a>
                             </div>
                             <div class="post-content media-body">
@@ -43,7 +43,7 @@
                         <div class="d-flex hover-up-2 transition-normal">
                             <div class="post-thumb post-thumb-80 d-flex mr-15 border-radius-5 img-hover-scale overflow-hidden">
                                 <a class="color-white" href="single.html">
-                                    <img src="assets/imgs/news/thumb-2.jpg" alt="">
+                                    <img src="{{ asset('assets') }}/imgs/news/thumb-2.jpg" alt="">
                                 </a>
                             </div>
                             <div class="post-content media-body">
@@ -59,7 +59,7 @@
                         <div class="d-flex hover-up-2 transition-normal">
                             <div class="post-thumb post-thumb-80 d-flex mr-15 border-radius-5 img-hover-scale overflow-hidden">
                                 <a class="color-white" href="single.html">
-                                    <img src="assets/imgs/news/thumb-3.jpg" alt="">
+                                    <img src="{{ asset('assets') }}/imgs/news/thumb-3.jpg" alt="">
                                 </a>
                             </div>
                             <div class="post-content media-body">
@@ -80,7 +80,7 @@
                 <h5 class="mt-5 mb-30">Advertise banner</h5>
             </div>
             <a href="https://themeforest.net/user/alithemes/portfolio" target="_blank">
-                <img class="advertise-img border-radius-5" src="assets/imgs/ads/ads-1.jpg" alt="">
+                <img class="advertise-img border-radius-5" src="{{ asset('assets') }}/imgs/ads/ads-1.jpg" alt="">
             </a>
         </div>
     </div>

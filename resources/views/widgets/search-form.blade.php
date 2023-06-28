@@ -6,7 +6,7 @@
                     <p class="text-center"><span class="search-text-bg">Search</span></p>
                     <form action="#" class="search-header">
                         <div class="input-group w-100">
-                            <input type="text" class="form-control" placeholder="Search stories, places and people">
+                            <input type="text" class="form-control" placeholder="Search stories, places and people" name="query">
                             <div class="input-group-append">
                                 <button class="btn btn-search bg-white" type="submit">
                                         <i class="elegant-icon icon_search"></i>
@@ -36,7 +36,7 @@
                     <div class="d-flex bg-grey has-border p-25 hover-up-2 transition-normal border-radius-5 mb-30">
                         <div class="post-thumb post-thumb-64 d-flex mr-15 border-radius-5 img-hover-scale overflow-hidden">
                             <a class="color-white" href="single.html">
-                                <img src="assets/imgs/news/thumb-2.jpg" alt="">
+                                <img src="{{ asset('assets') }}/imgs/news/thumb-2.jpg" alt="">
                             </a>
                         </div>
                         <div class="post-content media-body">
@@ -49,7 +49,7 @@
                     <div class="d-flex bg-grey has-border p-25 hover-up-2 transition-normal border-radius-5 mb-30">
                         <div class="post-thumb post-thumb-64 d-flex mr-15 border-radius-5 img-hover-scale overflow-hidden">
                             <a class="color-white" href="single.html">
-                                <img src="assets/imgs/news/thumb-4.jpg" alt="">
+                                <img src="{{ asset('assets') }}/imgs/news/thumb-4.jpg" alt="">
                             </a>
                         </div>
                         <div class="post-content media-body">
@@ -62,7 +62,7 @@
                     <div class="d-flex bg-grey has-border p-25 hover-up-2 transition-normal border-radius-5 mb-30">
                         <div class="post-thumb post-thumb-64 d-flex mr-15 border-radius-5 img-hover-scale overflow-hidden">
                             <a class="color-white" href="single.html">
-                                <img src="assets/imgs/news/thumb-3.jpg" alt="">
+                                <img src="{{ asset('assets') }}/imgs/news/thumb-3.jpg" alt="">
                             </a>
                         </div>
                         <div class="post-content media-body">

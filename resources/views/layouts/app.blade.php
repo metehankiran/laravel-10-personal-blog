@@ -7,12 +7,12 @@
     <title>@yield('title') - {{ env('APP_NAME') }}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/theme/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets') }}/imgs/theme/favicon.png">
     <!-- NewsBoard CSS  -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/widgets.css">
-    <link rel="stylesheet" href="assets/css/dark.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="{{ asset('assets') }}/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets') }}/css/widgets.css">
+    <link rel="stylesheet" href="{{ asset('assets') }}/css/dark.css">
+    <link rel="stylesheet" href="{{ asset('assets') }}/css/responsive.css">
 
     @yield('styles')
 </head>
@@ -76,13 +76,9 @@
                             <h5 class="mt-5 mb-30">Tagcloud</h5>
                         </div>
                         <div class="tagcloud mt-50">
-                            <a class="tag-cloud-link" href="category.html">beautiful</a>
-                            <a class="tag-cloud-link" href="category.html">New York</a>
-                            <a class="tag-cloud-link" href="category.html">droll</a>
-                            <a class="tag-cloud-link" href="category.html">intimate</a>
-                            <a class="tag-cloud-link" href="category.html">loving</a>
-                            <a class="tag-cloud-link" href="category.html">travel</a>
-                            <a class="tag-cloud-link" href="category.html">fighting </a>
+                            @foreach ($tagCloud as $tag)
+                                <a class="tag-cloud-link" href="{{ route('home.search',$tag->slug) }}">{{ $tag->name }}</a>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -94,9 +90,9 @@
                         <div class="newsletter">
                             <p class="font-medium">Subscribe to our newsletter and get our newest updates right on your inbox.</p>
                             <form class="input-group form-subcriber mt-30 d-flex">
-                                <input type="email" class="form-control bg-white font-small" placeholder="Enter your email">
+                                <input type="email" class="form-control bg-white font-small" name="email" placeholder="Enter your email" autocomplete="on">
                                 <button class="btn bg-primary text-white" type="submit">Subscribe</button>
-                                <label class="mt-20"> <input class="mr-5" name="name" type="checkbox" value="1" required=""> I agree to the <a href="#" target="_blank">terms &amp; conditions</a> </label>
+                                <label class="mt-20"> <input class="mr-5" name="name" type="checkbox" value="1" required="" autocomplete="off"> I agree to the <a href="#" target="_blank">terms &amp; conditions</a> </label>
                             </form>
                         </div>
                     </div>
@@ -113,24 +109,24 @@
     <!-- End Footer -->
     <div class="dark-mark"></div>
     <!-- Vendor JS-->
-    <script src="./assets/js/vendor/modernizr-3.6.0.min.js"></script>
-    <script src="./assets/js/vendor/jquery-3.6.0.min.js"></script>
-    <script src="./assets/js/vendor/popper.min.js"></script>
-    <script src="./assets/js/vendor/bootstrap.min.js"></script>
-    <script src="./assets/js/vendor/jquery.slicknav.js"></script>
-    <script src="./assets/js/vendor/slick.min.js"></script>
-    <script src="./assets/js/vendor/wow.min.js"></script>
-    <script src="./assets/js/vendor/jquery.ticker.js"></script>
-    <script src="./assets/js/vendor/jquery.vticker-min.js"></script>
-    <script src="./assets/js/vendor/jquery.scrollUp.min.js"></script>
-    <script src="./assets/js/vendor/jquery.nice-select.min.js"></script>
-    <script src="./assets/js/vendor/jquery.magnific-popup.js"></script>
-    <script src="./assets/js/vendor/jquery.sticky.js"></script>
-    <script src="./assets/js/vendor/perfect-scrollbar.js"></script>
-    <script src="./assets/js/vendor/waypoints.min.js"></script>
-    <script src="./assets/js/vendor/jquery.theia.sticky.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/popper.min.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/bootstrap.min.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/jquery.slicknav.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/slick.min.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/wow.min.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/jquery.ticker.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/jquery.vticker-min.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/jquery.scrollUp.min.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/jquery.nice-select.min.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/jquery.magnific-popup.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/jquery.sticky.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/perfect-scrollbar.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/waypoints.min.js"></script>
+    <script src="{{ asset('assets') }}/js/vendor/jquery.theia.sticky.js"></script>
     <!-- NewsBoard JS -->
-    <script src="./assets/js/main.js"></script>
+    <script src="{{ asset('assets') }}/js/main.js"></script>
 
     @yield('scripts')
 </body>

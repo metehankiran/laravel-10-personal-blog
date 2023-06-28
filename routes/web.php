@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 // Home
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('/contact', [HomeController::class, 'contact'])->name('home.contact');
+Route::post('/contact', [HomeController::class, 'contactStore'])->name('home.contact.store');
+Route::get('/search/{query}', [HomeController::class, 'search'])->name('home.search');
 
 // Authentication
 Route::middleware('guest')->group(function () {
