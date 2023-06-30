@@ -45,4 +45,24 @@ class Post extends Model
         $likedScore = ($this->likes / ($this->likes + $this->dislikes)) * 10;
         return round($likedScore, 1);
     }
+
+    /**
+     * Get formatted date
+     *
+     * @return void
+     */
+    public function getFormattedPublishedDateAttribute()
+    {
+        return \Carbon\Carbon::parse($this->published_at)->format('d F Y');
+    }
+
+    /**
+     * Get read time
+     *
+     * @return void
+     */
+    public function getReadTimeAttribute()
+    {
+        return round(str_word_count($this->content) / 180);
+    }
 }

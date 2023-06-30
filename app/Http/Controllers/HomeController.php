@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Contact;
 use App\Models\Post;
+use App\Models\TagCloud;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -16,10 +17,13 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $categories = Category::with('children')->where('parent_id', null)->get();
-
-        view()->share('tagCloud', \App\Models\TagCloud::all());
+        $categories = Category::with('children','posts')->where('parent_id', null)->get();
+        $posts = Post::with('category')->get();
+        $tagCloud = TagCloud::all();
+        
+        view()->share('tagCloud', $tagCloud);
         view()->share('categories', $categories);
+        view()->share('posts', $posts);
     }
 
     /**

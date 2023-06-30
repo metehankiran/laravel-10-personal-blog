@@ -30,4 +30,14 @@ class Category extends Model
     {
         return $this->hasMany(Category::class,'parent_id');
     }
+
+    /**
+     * Get all of the posts for the Category
+     *
+     * @return void
+     */
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

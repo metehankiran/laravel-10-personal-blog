@@ -45,8 +45,8 @@
                                                 @if($post->is_featured) <span class="post-format-icon"><i class="elegant-icon icon_star_alt"></i></span> @endif
                                             </h5>
                                             <div class="entry-meta meta-1 float-start font-x-small text-uppercase">
-                                                <span class="post-on">{{ \Carbon\Carbon::parse($post->created_at)->format('d F Y') }}</span>
-                                                <span class="time-reading has-dot">{{ round(strlen($post->content)/180) }} mins read</span>
+                                                <span class="post-on">{{ $post->formatted_published_date }}</span>
+                                                <span class="time-reading has-dot">{{ $post->read_time }} mins read</span>
                                                 <span class="post-by has-dot">{{ $post->views }} views</span>
                                             </div>
                                         </div>
