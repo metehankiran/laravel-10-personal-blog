@@ -7,12 +7,7 @@ on:
 
 jobs:
   build:
-    env:
-      DB_CONNECTION: mysql
-      DB_DATABASE: lyzzu
-      DB_USERNAME: root
-      DB_PASSWORD: root
-      
+
     runs-on: ubuntu-latest
 
     steps:
@@ -25,6 +20,11 @@ jobs:
       run: composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
 
     - name: Run database migrations
+      env:
+        DB_CONNECTION: mysql
+        DB_DATABASE: lyzzu
+        DB_USERNAME: root
+        DB_PASSWORD: root
       run: php artisan migrate --force
 
     - name: Clear cache
